@@ -249,18 +249,33 @@
             justify-content: center;
             margin-bottom: 0.75rem;
             position: relative;
+            width: fit-content;
+            /* Add this to contain the status dot properly */
         }
 
         .status-dot {
             position: absolute;
-            bottom: 15px;
-            left: 85px;
+            bottom: 27px;
+            /* Use percentage for responsive positioning */
+            right: -70%;
+            /* Use percentage for responsive positioning */
             width: 16px;
             height: 16px;
             border-radius: 50%;
             border: 3px solid #000000;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             z-index: 50;
+            transform: translate(50%, 50%);
+            /* Center the dot perfectly */
+        }
+
+        /* Optional: Slightly adjust for very small screens */
+        @media (max-width: 480px) {
+            .status-dot {
+                width: 14px;
+                height: 14px;
+                border-width: 2px;
+            }
         }
 
         .status-online {
